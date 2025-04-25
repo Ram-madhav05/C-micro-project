@@ -24,7 +24,6 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar(); // Clear newline
 
         if (choice == 1) addStudent();
         else if (choice == 2) viewStudents();
@@ -49,19 +48,9 @@ void addStudent() {
 
     printf("Enter Roll Number: ");
     scanf("%d", &s.roll);
-    getchar();
-    printf("Enter Name: ");
-    fgets(s.name, sizeof(s.name), stdin);
 
-    // remove newline
-    int i = 0;
-    while (s.name[i] != '\0') {
-        if (s.name[i] == '\n') {
-            s.name[i] = '\0';
-            break;
-        }
-        i++;
-    }
+    printf("Enter Name (no spaces): ");
+    scanf("%s", s.name);  // reads single word, no newline issues
 
     printf("Enter Marks: ");
     scanf("%f", &s.marks);

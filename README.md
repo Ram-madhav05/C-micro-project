@@ -67,6 +67,4 @@ gcc main.c -o student_app
 ## 📝 Notes
 
 - File operations are done in binary mode (`"rb"`, `"ab"`).
-- The name input uses `fgets()` for safe reading.
-- The newline from `fgets()` is manually removed for cleaner output.
 - Make sure `students.txt` is in the same directory as your executable.
